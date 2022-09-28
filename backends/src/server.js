@@ -9,7 +9,8 @@ const teamMemberRouter = require("./features/team_member/tm.router");
 const app = express();
 app.use(express.json());
 
-app.use("/users", userRouter);
+
+app.use("/users", userRouter)
 app.use("/team_members", teamMemberRouter);
 app.use("/tasks", taskRouter);
 app.use("/projects", projectRouter);
