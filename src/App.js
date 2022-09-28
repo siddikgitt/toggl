@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Footer from "./components/Footer/Footer"
 import Homepage from './pages/Homepage';
+import { Timer } from './pages/Timer';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Navbar/>
       <Homepage/>
       <Footer/>
+      <Timer/>
     </div>
   );
 }
