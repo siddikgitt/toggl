@@ -51,8 +51,8 @@ const MobileNavContext = (props) => {
           )
         )}
         <Box display="flex" alignItems="center" justifyContent="center">
-          <Button borderRadius="25px" colorScheme="blue" size="lg" mt="5">
-            Try for free
+          <Button borderRadius="25px" background="pink" size="lg" mt="5">
+            Go to Timer
           </Button>
         </Box>
         <Box
@@ -132,11 +132,14 @@ const DesktopNavContent = (props) => {
         <Button
           as="a"
           href="#"
-          colorScheme="blue"
+          colorScheme="yellow"
           fontWeight="bold"
           borderRadius="25px"
+          _hover={{
+            color: "#cb7bc6",
+          }}
         >
-          Try for free
+          Go to Timer
         </Button>
       </HStack>
     </Flex>
