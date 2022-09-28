@@ -444,8 +444,8 @@ function Homepage() {
           </div>
         </div>
 
-        <div>
-          <div style={{ display: "flex", alignItems: "center", backgroundColor: "#2c1438" }}>
+        <div style={{backgroundColor: "#2c1438"}}>
+          <div style={{ display: "flex", alignItems: "center",backgroundColor: "#2c1438" }}>
             <div style={{ padding: "3rem" }}>
               <h2 style={{ fontSize: "2rem", color: "snow" }}>
                 70,000+ customers use Toggl Track to hit their productivity and
@@ -560,9 +560,10 @@ function Homepage() {
           </div>
           <div
             style={{
+              backgroundColor: "#2c1438",
               display: "flex",
               justifyContent: "center",
-              margin: "2rem",
+              paddingBottom:"2rem"
             }}
           >
             <div
