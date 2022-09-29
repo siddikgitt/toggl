@@ -12,7 +12,7 @@ import { Box } from "@chakra-ui/react";
 export const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(Date.now());
   return (
-    <Box border="1px" paddingLeft="10px">
+    <Box border="1px" paddingLeft="2px">
     <DatePicker  selected={selectedDate} onChange={(date) => setSelectedDate(date)} dateFormat='dd/MM/yyyy'
     minDate={new Date()}
     showYearDropdown
