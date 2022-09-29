@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 //import Homepage from "../pages/Homepage";
 import Navbar from "../components/Navbar/Navbar";
 import { LoginPage } from "../pages/Login/Login";
+import { Signup } from "../pages/Login/Signup";
 
 const AllRoutes = () => {
   return (
@@ -30,6 +31,10 @@ const AllRoutes = () => {
            
         }
        />
+     <Route path="/signup"
+            element={ <Signup /> }
+     />
+
       </Routes>
     </div>
   );
