@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import Homepage from "../pages/Homepage";
 import Navbar from "../components/Navbar/Navbar";
 import { LoginPage } from "../pages/Login/Login";
+import { Timer } from "../pages/Timer";
 
 const AllRoutes = () => {
   return (
@@ -30,6 +31,7 @@ const AllRoutes = () => {
            
         }
        />
+       <Route path="/timer" element={<Timer/>}/>
       </Routes>
     </div>
   );
