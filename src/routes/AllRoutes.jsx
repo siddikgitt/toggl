@@ -5,6 +5,7 @@ import Homepage from "../pages/Homepage";
 import Navbar from "../components/Navbar/Navbar";
 import { LoginPage } from "../pages/Login/Login";
 import { Timer } from "../pages/Timer";
+import { Reports } from "../pages/Reports";
 
 const AllRoutes = () => {
   return (
@@ -32,7 +33,9 @@ const AllRoutes = () => {
         }
        />
        <Route path="/timer" element={<Timer/>}/>
+       <Route path="/reports" element={<Reports/>}/>
       </Routes>
+      
     </div>
   );
 };
