@@ -1,38 +1,62 @@
-import { Box, Center, Divider, Flex, Input, Spacer, Text } from '@chakra-ui/react'
+import { Box, Button, Center, Divider, Flex, Input, Spacer, Text } from '@chakra-ui/react'
 import {BsFillCreditCardFill,BsFillTagFill} from "react-icons/bs";
 import {BiDollar} from "react-icons/bi";
+import {AiTwotoneSetting} from "react-icons/ai"
+import {RiArrowDropDownLine} from "react-icons/ri"
 import React, { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import { Calendar } from '../components/Calendar';
+import { Stopwatch } from '../components/Stopwatch';
 export const Timer=()=>{
-    const [value, onChange] = useState(new Date());
+    
     return (
         <>
-        <Box>
-            <Flex alignItems='center' h='84px' paddingLeft='20px' paddingRight='20px' >
+        <Box  bg="rgb(254,249,247)">
+            
+            <Flex bg='white' boxShadow='md' alignItems='center' h='84px' paddingLeft='20px' paddingRight='20px' >
                 <Input border='none' w='70%' fontFamily='Roboto, Helvetica, sans-serif' placeholder='What are you working on?'/>
                 <Spacer/>
-                <BsFillCreditCardFill/>
+                <BsFillCreditCardFill size='20' color='rgb(126,110,133)'/>
                 <Spacer/>
-                <BsFillTagFill/>
+                <BsFillTagFill size='20' color='rgb(126,110,133)'/>
                 <Spacer/>
-                <BiDollar/>
+                <BiDollar size='20' color='rgb(126,110,133)'/>
                 <Spacer/>
-                <Box>Timer</Box>
+                <Box>
+                    <Stopwatch/>
+                </Box>
+                <Spacer/>
             </Flex>
-            <Flex paddingLeft='20px' paddingRight='20px' >
+            <Flex paddingTop='30px' paddingBottom='30px' alignItems='center' paddingLeft='20px' paddingRight='20px' >
                 <Text paddingRight="40%">THIS WEEK</Text>
                 <Box>
-                <Center height='30px' paddingRight='10px'>
-                 <Divider color='red' orientation='vertical' />
+                <Center color='black' height='30px' paddingRight='30px'>
+                 <Divider  orientation='vertical' />
                 </Center>
                 </Box>
                 <Text>WEEK TOTAL</Text>
                 <Spacer/>
+                <Text>
+                   00:00:00
+                </Text>
+                <Spacer/>
                 <Box>
-                <Calendar onChange={onChange} value={value} />
+               
+                <Calendar/>
                 </Box>
+                <Spacer/>
+                <AiTwotoneSetting/>
+                <Spacer/>
+                <Flex alignItems='center'>
+                <Text>
+                    WEEK VIEW
+                   
+                </Text>
+                <RiArrowDropDownLine/>
+                </Flex>
+                <Spacer/>
+                
             </Flex>
+         
         </Box>
         </>
     )
