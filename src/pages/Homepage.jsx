@@ -64,7 +64,8 @@ function Homepage() {
                         backgroundColor: "#2c1438",
                         border: "1px solid gray",
                         padding: "0.75rem 1.5rem",
-                        width: "100%",
+                        width: "70%",
+                        justifyContent:"left"
                       }}
                       type="email"
                       placeholder="Email"
@@ -80,7 +81,7 @@ function Homepage() {
                         backgroundColor: "#2c1438",
                         border: "1px solid gray",
                         padding: "0.75rem 1.5rem",
-                        width: "100%",
+                        width: "70%",
                       }}
                       type="password"
                       placeholder="Strong password"
@@ -96,7 +97,7 @@ function Homepage() {
                   <div
                     style={
                       screen > 800
-                        ? { display: "flex", justifyContent: "space-between" }
+                        ? { display: "flex", gap:"30px", marginLeft:"15%" }
                         : { display: "grid", gridTemplateColumns: "1fr" }
                     }
                   >
@@ -115,7 +116,7 @@ function Homepage() {
                                 padding: "0.75rem 1.5rem",
                                 borderRadius: "25px",
                                 backgroundColor: "#e57cd8",
-                                width: "100%",
+                                width: "80%",
                               }
                         }
                         type="submit"
