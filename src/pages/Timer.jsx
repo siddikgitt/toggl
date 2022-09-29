@@ -10,7 +10,7 @@ export const Timer=()=>{
     
     return (
         <>
-        <Box  bg="rgb(254,249,247)">
+        <Box  bg="rgb(254,249,247)" paddingBottom='30px'>
             
             <Flex bg='white' boxShadow='md' alignItems='center' h='84px' paddingLeft='20px' paddingRight='20px' >
                 <Input border='none' w='70%' fontFamily='Roboto, Helvetica, sans-serif' placeholder='What are you working on?'/>
@@ -28,10 +28,10 @@ export const Timer=()=>{
             </Flex>
             <Flex paddingTop='30px' paddingBottom='30px' alignItems='center' paddingLeft='20px' paddingRight='20px' >
                 <Text paddingRight="40%">THIS WEEK</Text>
-                <Box>
-                <Center color='black' height='30px' paddingRight='30px'>
+                <Box h='20px' borderLeft='2px solid rgb(126,110,133)' paddingRight='25px'>
+                {/* <Center color='black' height='30px' paddingRight='30px'>
                  <Divider  orientation='vertical' />
-                </Center>
+                </Center> */}
                 </Box>
                 <Text>WEEK TOTAL</Text>
                 <Spacer/>
@@ -56,6 +56,19 @@ export const Timer=()=>{
                 <Spacer/>
                 
             </Flex>
+            <Box>
+                <Text paddingLeft='20px' paddingBottom="5px" textAlign='left' color='rgb(126,110,133)'>(NO PROJECT)</Text>
+            <hr
+        style={{
+          background: 'rgb(126,110,133)',
+          color: 'rgb(126,110,133)',
+        //   borderColor: 'lime',
+          height: '3px',
+         marginRight:"20px",
+         marginLeft:"20px",
+        }}
+      />
+            </Box>
          
         </Box>
         </>
