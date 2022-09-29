@@ -32,7 +32,16 @@ function Homepage() {
               lineHeight: "3rem",
             }}
           >
-            Simple time tracking to save you <em style={{ color: "hotpink" }}>time</em> and <em style={{ color: "hotpink" }}>money</em>.
+            Simple time tracking to save you 
+          </h1>
+          <h1
+           style={{
+            fontSize: screen > 800 ? "4rem" : "2rem",
+            fontWeight: "bold",
+            marginBottom: "2rem",
+            lineHeight: "3rem",
+          }}
+          ><em style={{ color: "hotpink" }}>time</em> and <em style={{ color: "hotpink" }}>money</em>.
           </h1>
           <div
             style={
@@ -49,10 +58,11 @@ function Homepage() {
             }
           >
             <div style={{ marginBottom: "4rem" }}>
-              <p style={{ fontSize: "1.5rem" }}>
-                Join 5 million users in using the world's best time tracking
-                software
+              <p style={{ fontSize: "1.5rem", }}>
+              Bill accurately, measure profitability, manage workloads
+              
               </p>
+              <p style={{ fontSize: "1.5rem",  }}>— and spend less time on it all.</p>
               <form >
               {/* onSubmit={handleSubmit} */}
                 <div style={{ padding: "2rem" }}>
@@ -60,11 +70,11 @@ function Homepage() {
                   <div>
                     <input
                       style={{
-                        backgroundColor: "#2c1438",
+                        backgroundColor: "#FCE5D8",
                         border: "1px solid gray",
                         padding: "0.75rem 1.5rem",
                         width: "70%",
-                        justifyContent:"left"
+                        marginLeft:"-15%"
                       }}
                       type="email"
                       placeholder="Email"
@@ -77,10 +87,11 @@ function Homepage() {
                     <br />
                     <input
                       style={{
-                        backgroundColor: "#2c1438",
+                        backgroundColor: "#FCE5D8",
                         border: "1px solid gray",
                         padding: "0.75rem 1.5rem",
                         width: "70%",
+                        marginLeft:"-15%"
                       }}
                       type="password"
                       placeholder="Strong password"
@@ -96,7 +107,7 @@ function Homepage() {
                   <div
                     style={
                       screen > 800
-                        ? { display: "flex", gap:"30px", marginLeft:"15%" }
+                        ? { display: "flex", gap:"30px", marginLeft:"8%" }
                         : { display: "grid", gridTemplateColumns: "1fr" }
                     }
                   >
@@ -180,9 +191,9 @@ function Homepage() {
                   }}
                 >
                   <div>
-                    Stand-up meeting 0:01:22 3D illustration TODO“I love the
-                    ease of just clocking in and out with{" "}
-                    <em style={{ color: "#e91e63" }}>just one click!</em>”
+                    “I love the
+                    ease of just clocking in {" "} 
+                    and out with <em style={{ color: "#e91e63" }}>just one click!</em>”
                   </div>
                   <div style={{ textAlign: "end" }}>– Quelani P.</div>
                 </div>
