@@ -3,7 +3,6 @@ import TimerBox from "./Homepage/TimerBox";
 import { FaGoogle, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { GoMail } from "react-icons/go";
-import { BsClockHistory, BsShieldCheck, BsStars } from "react-icons/bs";
 import { useScreenWidth } from "../hooks/useScreenWidth";
 
 
@@ -190,62 +189,14 @@ function Homepage() {
               </div>
             </div>
           </div>
-          <div
-            style={
-              screen > 800
-                ? {
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr 1fr",
-                    padding: "1rem",
-                    color: "black",
-                    backgroundColor: "#fce4d8",
-                  }
-                : {
-                    display: "grid",
-                    gridTemplateColumns: "1fr",
-                    padding: "1rem",
-                    color: "black",
-                    backgroundColor: "#fce4d8",
-                  }
-            }
-          >
-            <div
-              style={{
-                width: "100%",
-                margin: "1rem",
-                gap: "1rem",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <BsClockHistory style={{ fontSize: "2rem" }} />
-              <p>No credit card required. Sign up and start tracking!</p>
-            </div>
-            <div
-              style={{
-                width: "100%",
-                margin: "1rem",
-                display: "flex",
-                gap: "1rem",
-                alignItems: "center",
-              }}
-            >
-              <BsShieldCheck style={{ fontSize: "2rem" }} />
-              <p>4.7 out of 5 stars from 3,800 user reviews.</p>
-            </div>
-            <div
-              style={{
-                width: "100%",
-                margin: "1rem",
-                display: "flex",
-                gap: "1rem",
-                alignItems: "center",
-              }}
-            >
-              <BsStars style={{ fontSize: "2rem" }} />
-              <p>GDPR-compliant. Your security is our highest priority.</p>
-            </div>
-          </div>
+          <h1 style={{fontsize:"2rem",
+                    color: "white",
+                    fontSize: "1.2rem",
+                    fontWeight: "bold",
+                    marginLeft:"-62%",
+                    lineHeight:"3rem"
+                    }}>TRUSTED BY OVER 6 MILLION USERS ACROSS 120 COUNTRIES</h1>
+          <img style={{width:"80%"}} src="./Sunil1.avif" alt="img"/>
           <p style={{ textAlign: "center", margin: "2rem 0" }}>
             Onboarding a team?
             <span style={{ margin: "0 1rem", color: "hotpink" }}>
