@@ -4,8 +4,6 @@ import { FaGoogle, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { GoMail } from "react-icons/go";
 import { useScreenWidth } from "../hooks/useScreenWidth";
-import { Link } from "react-router-dom";
-
 
 function Homepage() {
   const { screen } = useScreenWidth();
@@ -664,12 +662,15 @@ function Homepage() {
                 justifyContent: "space-between",
               }}
             >
-              <div style={{ marginBottom: "2rem" }}>
-                <img
+              <div style={{ marginBottom: "2rem", }}>
+                <img style={{ width:"150px",
+                  height:"150px",
+                 marginLeft:"35%"
+                }}
+
                   src="/integration.png"
                   alt="img"
-                  width="150px"
-                  height="150px"
+                 
                 />
               </div>
               <div>
@@ -691,7 +692,7 @@ function Homepage() {
               }}
             >
               <div style={{ marginBottom: "2rem" }}>
-                <img
+                <img  style={{ marginLeft: "35%" }}
                   src="/desktop.png"
                   alt="img"
                   width="200px"
@@ -719,7 +720,7 @@ function Homepage() {
               }}
             >
               <div style={{ marginBottom: "2rem" }}>
-                <img src="/like.png" alt="img" width="150px" height="150px" />
+                <img style={{ marginLeft: "35%" }} src="/like.png" alt="img" width="150px" height="150px" />
               </div>
               <div>
                 <h2 style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
