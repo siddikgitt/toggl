@@ -32,7 +32,7 @@ function Homepage() {
               lineHeight: "3rem",
             }}
           >
-            Simple time tracking to save you 
+            Simple time tracking to save your 
           </h1>
           <h1
            style={{
