@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Input, Spacer, Text } from "@chakra-ui/react"
+import { Box, Divider, Flex, Input, Spacer, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react"
 import {FaSave} from "react-icons/fa";
 import {HiDownload} from "react-icons/hi";
 import {AiOutlineTeam,AiFillProject} from "react-icons/ai";
@@ -12,7 +12,7 @@ export const Reports=()=>{
         <>
         <Flex>
             <Sidebar/>
-         <Box w='85%' marginLeft='15%'  bg="rgb(254,249,247)" paddingBottom='30px'  >
+         <Box w='85%' h='calc(100vh)' marginLeft='15%'  bg="rgb(254,249,247)" paddingBottom='30px'  >
             
             <Flex bg='white'  alignItems='center' h='66px' paddingLeft='20px' paddingRight='20px'>
                 <Text>Reports</Text>
@@ -32,7 +32,7 @@ export const Reports=()=>{
 
             </Flex>
             <Divider orientation='horizontal' />
-            <Flex alignItems='center' bg='white' boxShadow='md' h='50px' paddingLeft='20px' paddingRight='40%'>
+            <Flex alignItems='center' bg='white' boxShadow='md' h='50px' paddingLeft='20px' paddingRight='40%' marginBottom='30px'>
                 <Text color='rgb(149,137,155)'>Filter by:</Text>
                 <Spacer/>
                 <Flex alignItems='center'>
@@ -70,6 +70,28 @@ export const Reports=()=>{
                     <Text color='rgb(149,137,155)'>Description</Text>
                 </Flex>
             </Flex>
+            <TableContainer bg='white'>
+  <Table size='sm'>
+    <Thead>
+      <Tr>
+        <Th>PROJECT</Th>
+        <Th>CLIENT</Th>
+        <Th>TIME STATUS</Th>
+        <Th>BILLABLE STATUS</Th>
+        <Th>TEAM</Th>
+      </Tr>
+    </Thead>
+    <Tbody>
+      <Tr>
+        <Td>Toggl</Td>
+        <Td>Masai</Td>
+        <Td>5 days</Td>
+        <Td>00</Td>
+        <Td>spartan</Td>
+      </Tr>
+    </Tbody>
+  </Table>
+</TableContainer>
             </Box>
             </Flex>
         </>
