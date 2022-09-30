@@ -4,18 +4,20 @@ import {BsFillClockFill,BsFillFilePersonFill,BsPersonCircle} from "react-icons/b
 import {TbReport} from "react-icons/tb"
 import {MdOutlineInsights} from "react-icons/md";
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 export const Sidebar=()=>{
+    const navigate=useNavigate()
     return(
         <>
-         <Box position='fixed' bg='rgb(44,19,56)'h='calc(100vh)' w='15%' paddingLeft='20px' paddingRight='20px'>
-            <Image src='https://freight.cargo.site/t/original/i/b3ce721155f60e21682970f5e714309bac4224c4b3891f0d387519c0181ca9e6/Frame-14x-100.jpg' alt='logo'/>
+         <Box position='fixed' bg='rgb(44,19,56)' h='calc(100vh)' w='15%' paddingLeft='20px' paddingRight='20px'>
+            <Image style={{cursor:"pointer"}} onClick={()=>navigate("/")} src='https://freight.cargo.site/t/original/i/b3ce721155f60e21682970f5e714309bac4224c4b3891f0d387519c0181ca9e6/Frame-14x-100.jpg' alt='logo'/>
             <Text marginBottom='10px' textAlign='left' color='rgb(130, 113, 136)'>TRACK</Text>
-            <Flex marginBottom='20px' alignItems='center'>
+            <Flex  style={{cursor:"pointer"}} onClick={()=>navigate("/timer")} marginBottom='20px' alignItems='center'>
                <BsFillClockFill color='white'/>
                <Text paddingLeft='7px' color='white'>Timer</Text>
             </Flex>
             <Text marginBottom='10px' textAlign='left' color='rgb(130, 113, 136)'>ANALYZE</Text>
-            <Flex alignItems='center'>
+            <Flex  style={{cursor:"pointer"}} onClick={()=>navigate("/reports")} alignItems='center'>
                <TbReport color='white'/>
                <Text paddingLeft='7px' color='white'>Reports</Text>
             </Flex>

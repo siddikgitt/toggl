@@ -1,4 +1,4 @@
-import { Box, Button, Center, Divider, Flex, Image, Input, Spacer, Text } from '@chakra-ui/react'
+import { Box, Button, Center, Divider, Flex, Image, Input, Spacer, Table, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
 import {BsFillCreditCardFill,BsFillTagFill} from "react-icons/bs";
 import {BiDollar} from "react-icons/bi";
 import {AiTwotoneSetting,AiOutlineTeam,AiFillProject} from "react-icons/ai"
@@ -16,7 +16,7 @@ export const Timer=()=>{
         <>
         <Flex>
        <Sidebar/>
-        <Box w='85%' marginLeft='15%'  bg="rgb(254,249,247)" paddingBottom='30px'>
+        <Box w='85%' h='calc(100vh)' marginLeft='15%'  bg="rgb(254,249,247)" paddingBottom='30px'>
             
             <Flex  bg='white' boxShadow='md' alignItems='center' h='84px' paddingLeft='20px' paddingRight='20px' >
                 <Input border='none' w='70%' fontFamily='Roboto, Helvetica, sans-serif' placeholder='What are you working on?'/>
@@ -72,9 +72,32 @@ export const Timer=()=>{
           height: '3px',
          marginRight:"20px",
          marginLeft:"20px",
+         marginBottom:"30px"
         }}
       />
             </Box>
+  <TableContainer bg='white'>
+  <Table size='sm'>
+    <Thead>
+      <Tr>
+        <Th>PROJECT</Th>
+        <Th>CLIENT</Th>
+        <Th>TIME STATUS</Th>
+        <Th>BILLABLE STATUS</Th>
+        <Th>TEAM</Th>
+      </Tr>
+    </Thead>
+    <Tbody>
+      <Tr>
+        <Td>Toggl</Td>
+        <Td>Masai</Td>
+        <Td>5 days</Td>
+        <Td>00</Td>
+        <Td>spartan</Td>
+      </Tr>
+    </Tbody>
+  </Table>
+</TableContainer>
          
         </Box>
         </Flex>
