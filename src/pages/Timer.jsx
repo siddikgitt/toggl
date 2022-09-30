@@ -1,18 +1,24 @@
-import { Box, Button, Center, Divider, Flex, Input, Spacer, Text } from '@chakra-ui/react'
+import { Box, Button, Center, Divider, Flex, Image, Input, Spacer, Text } from '@chakra-ui/react'
 import {BsFillCreditCardFill,BsFillTagFill} from "react-icons/bs";
 import {BiDollar} from "react-icons/bi";
-import {AiTwotoneSetting} from "react-icons/ai"
+import {AiTwotoneSetting,AiOutlineTeam,AiFillProject} from "react-icons/ai"
 import {RiArrowDropDownLine} from "react-icons/ri"
+import {BsFillClockFill,BsFillFilePersonFill,BsPersonCircle} from "react-icons/bs"
+import {TbReport} from "react-icons/tb"
+import {MdOutlineInsights} from "react-icons/md";
 import React, { useState } from 'react';
 import { Calendar } from '../components/Calendar';
 import { Stopwatch } from '../components/Stopwatch';
+import { Sidebar } from '../components/Sidebar';
 export const Timer=()=>{
     
     return (
         <>
-        <Box  bg="rgb(254,249,247)" paddingBottom='30px'>
+        <Flex>
+       <Sidebar/>
+        <Box w='85%' marginLeft='15%'  bg="rgb(254,249,247)" paddingBottom='30px'>
             
-            <Flex bg='white' boxShadow='md' alignItems='center' h='84px' paddingLeft='20px' paddingRight='20px' >
+            <Flex  bg='white' boxShadow='md' alignItems='center' h='84px' paddingLeft='20px' paddingRight='20px' >
                 <Input border='none' w='70%' fontFamily='Roboto, Helvetica, sans-serif' placeholder='What are you working on?'/>
                 <Spacer/>
                 <BsFillCreditCardFill size='20' color='rgb(126,110,133)'/>
@@ -26,9 +32,9 @@ export const Timer=()=>{
                 </Box>
                 <Spacer/>
             </Flex>
-            <Flex paddingTop='30px' paddingBottom='30px' alignItems='center' paddingLeft='20px' paddingRight='20px' >
+            <Flex  paddingTop='30px' paddingBottom='30px' alignItems='center' paddingLeft='20px' paddingRight='20px' >
                 <Text paddingRight="40%">THIS WEEK</Text>
-                <Box h='20px' borderLeft='2px solid rgb(126,110,133)' paddingRight='25px'>
+                <Box h='20px' borderLeft='2px solid rgb(126,110,133)' paddingRight='5%'>
                 {/* <Center color='black' height='30px' paddingRight='30px'>
                  <Divider  orientation='vertical' />
                 </Center> */}
@@ -71,6 +77,7 @@ export const Timer=()=>{
             </Box>
          
         </Box>
+        </Flex>
         </>
     )
 }

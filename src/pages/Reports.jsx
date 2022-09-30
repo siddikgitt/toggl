@@ -6,10 +6,13 @@ import {BsFillFilePersonFill,BsFillTagFill} from "react-icons/bs";
 import {ImCheckboxChecked} from "react-icons/im";
 import {BiDollarCircle} from 'react-icons/bi';
 import {TiSortAlphabetically} from "react-icons/ti"
+import { Sidebar } from "../components/Sidebar";
 export const Reports=()=>{
     return (
         <>
-         <Box  bg="rgb(254,249,247)" paddingBottom='30px'  >
+        <Flex>
+            <Sidebar/>
+         <Box w='85%' marginLeft='15%'  bg="rgb(254,249,247)" paddingBottom='30px'  >
             
             <Flex bg='white'  alignItems='center' h='66px' paddingLeft='20px' paddingRight='20px'>
                 <Text>Reports</Text>
@@ -68,6 +71,7 @@ export const Reports=()=>{
                 </Flex>
             </Flex>
             </Box>
+            </Flex>
         </>
     )
 }
