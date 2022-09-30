@@ -7,6 +7,9 @@ import { RiArrowDropRightFill } from "react-icons/ri";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const getUser = async()=>{
+  let res =  await axios.get(``)
+}
 
 
 export const LoginPage =()=>{
