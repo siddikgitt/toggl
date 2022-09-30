@@ -4,7 +4,7 @@ import { FaGoogle, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { GoMail } from "react-icons/go";
 import { useScreenWidth } from "../hooks/useScreenWidth";
-
+import { Link } from "react-router-dom";
 
 function Homepage() {
   const { screen } = useScreenWidth();
@@ -112,7 +112,7 @@ function Homepage() {
                     }
                   >
                     <div style={{ marginBottom: "2rem" }}>
-                      <button
+                    <button
                         style={
                           screen > 800
                             ? {
@@ -131,8 +131,9 @@ function Homepage() {
                         }
                         type="submit"
                       >
-                        Sign up with email
+                        <Link to="/signup">Sign Up to toggl</Link>
                       </button>
+                      
                     </div>
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <span>Or sign up with :</span>
@@ -234,9 +235,7 @@ function Homepage() {
                 textAlign: "center",
               }}
             >
-              Toggl Track saves you{" "}
-              <em style={{ color: "hotpink" }}>time and money</em> , no matter
-              how you use it.
+             Time tracking for all your productivity and profitability needs
             </h1>
           </div>
           <div
@@ -405,6 +404,34 @@ function Homepage() {
               <p>Learn more</p>
             </div>
           </div>
+        </div>
+
+        <div style={{backgroundColor: "#2c1438", paddingBottom:"100px", marginBottom:"20px"}}>
+          <h1 style={{ fontSize: "4rem", color: "snow" }}>Why do teams love Toggl Track?</h1>
+         <div style={{display:"grid", gridTemplateColumns: screen > 800 ? "1fr 1fr" : "1fr" , width:"70%" ,
+         justifyContent: "space-between",gap:"2rem",
+         marginLeft:"15%",
+         marginTop:"40px"
+         }}>
+          <div style={{backgroundColor:"#F7D8F3",borderRadius:"20px"}}>
+            <h1 style={{ fontSize: "2rem", color: "black" , marginTop:"50px"}}>Users report up to 25% increase in billable hours with accurate time tracking that accounts for every minute spent on client work.</h1>
+            <img style={{width:"80%" , alignItems:"center", marginLeft:"10%", marginTop:"50px"}} src="/feature-11.avif" alt="img"/>
+          </div>
+          <div  style={{backgroundColor:"#FCE5D8",borderRadius:"20px"}}>
+            <h1 style={{ fontSize: "2rem", color: "black" , marginTop:"50px"}}>Speed up team adoption with an anti-surveillance platform that gets a "yes" from every employee.</h1>
+            <img style={{width:"80%", alignItems:"center", marginLeft:"10%", marginTop:"50px"}} src="/feature-22.avif" alt="img"/>
+          </div>
+          <div  style={{backgroundColor:"#FCE5D8",borderRadius:"20px"}}>
+          <h1 style={{ fontSize: "2rem", color: "black" , marginTop:"50px"}}>No training necessary. Get started right away with intuitive and welcoming features.</h1>
+          <img style={{width:"80%", alignItems:"center", marginLeft:"10%", marginTop:"50px"}} src="/feature-33.avif" alt="img"/>
+          </div>
+          <div style={{backgroundColor:"#F7D8F3",paddingBottom:"30%",borderRadius:"20px"}}>
+          <h1 style={{ fontSize: "2rem", color: "black" , marginTop:"50px"}}>Make time tracking and reporting a breeze with a beautifully-designed app experience.</h1>
+          <img style={{width:"80%", alignItems:"center", marginLeft:"10%", marginTop:"50px"}} src="/feature-44.avif" alt="img"/>
+          </div>
+         </div>
+            <h1  style={{ fontSize: "3rem", color: "snow" , marginTop:"50px"}}>Join 5 million users tracking their time to get results</h1>
+            <h1 style={{ fontSize: "1.5rem", color: "snow" , marginTop:"30px", width:"70%", marginLeft:"15%"}}>All plans come with a free, 30-day trial of Toggl Track Premium. Upgrade at the end of the trial or continue using Track for free.</h1>
         </div>
 
         <div style={{backgroundColor: "#2c1438"}}>
@@ -635,12 +662,15 @@ function Homepage() {
                 justifyContent: "space-between",
               }}
             >
-              <div style={{ marginBottom: "2rem" }}>
-                <img
+              <div style={{ marginBottom: "2rem", }}>
+                <img style={{ width:"150px",
+                  height:"150px",
+                 marginLeft:"35%"
+                }}
+
                   src="/integration.png"
                   alt="img"
-                  width="150px"
-                  height="150px"
+                 
                 />
               </div>
               <div>
@@ -662,7 +692,7 @@ function Homepage() {
               }}
             >
               <div style={{ marginBottom: "2rem" }}>
-                <img
+                <img  style={{ marginLeft: "35%" }}
                   src="/desktop.png"
                   alt="img"
                   width="200px"
@@ -690,7 +720,7 @@ function Homepage() {
               }}
             >
               <div style={{ marginBottom: "2rem" }}>
-                <img src="/like.png" alt="img" width="150px" height="150px" />
+                <img style={{ marginLeft: "35%" }} src="/like.png" alt="img" width="150px" height="150px" />
               </div>
               <div>
                 <h2 style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
