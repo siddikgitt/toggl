@@ -4,6 +4,7 @@ import { FaGoogle, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { GoMail } from "react-icons/go";
 import { useScreenWidth } from "../hooks/useScreenWidth";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   const { screen } = useScreenWidth();
@@ -130,8 +131,7 @@ function Homepage() {
                         }
                         type="submit"
                       >
-                        Sign up with email
-                        
+                        <Link to="/signup">Sign Up to toggl</Link>
                       </button>
                       
                     </div>

@@ -139,7 +139,7 @@ const DesktopNavContent = (props) => {
             color: "#cb7bc6",
           }}
         >
-          Go to Timer
+          <Link to="/timer">Go to Timer</Link>
         </Button>
       </HStack>
     </Flex>
