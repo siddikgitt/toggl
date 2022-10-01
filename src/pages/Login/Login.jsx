@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex, Image, Input, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Image, Input, Text } from '@chakra-ui/react';
 import hero from '../../utils/./hero-laptops.avif';
 import { FcGoogle } from "react-icons/fc";
 import { AiFillApple } from "react-icons/ai";
@@ -7,6 +7,10 @@ import { RiArrowDropRightFill } from "react-icons/ri";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import  axios from "axios"
+
+
+
+
 const getUser = async()=>{
   let res =  await axios.get(``)
 }
