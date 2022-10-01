@@ -6,7 +6,10 @@ import { TiLockClosed } from "react-icons/ti";
 import { RiArrowDropRightFill } from "react-icons/ri";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import  axios from "axios"
+
+
+
 
 const getUser = async()=>{
   let res =  await axios.get(``)

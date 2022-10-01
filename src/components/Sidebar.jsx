@@ -4,7 +4,9 @@ import {BsFillClockFill,BsFillFilePersonFill,BsPersonCircle} from "react-icons/b
 import {TbReport} from "react-icons/tb"
 import {MdOutlineInsights} from "react-icons/md";
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { HiTag } from "react-icons/hi";
+
 export const Sidebar=()=>{
     const navigate=useNavigate()
     return(
@@ -32,11 +34,15 @@ export const Sidebar=()=>{
             </Flex>
             <Flex alignItems='center'>
             <BsFillFilePersonFill style={{color:"white",marginRight:'7px'}}/>
-               <Text color='white'>Clients</Text>
+             <Link to="/client">   <Text color='white'>Clients</Text></Link>
             </Flex>
-            <Flex marginBottom='20px' alignItems='center'>
+            <Flex  alignItems='center'>
             <AiOutlineTeam style={{ color:"white",marginRight:'7px'}}/>
                <Text color='white'>Team</Text>
+            </Flex>
+            <Flex alignItems='center' marginBottom='20px'>
+            <HiTag style={{color:"white",marginRight:'7px',}}/>
+             <Link to="/tags">   <Text color='white'>Tags</Text></Link>
             </Flex>
             <Text marginBottom='10px' textAlign='left' color='rgb(130, 113, 136)'>WORKSPACE</Text>
             <Flex paddingLeft='5px' border='1px solid white' borderRadius='5px' alignItems='center'>
