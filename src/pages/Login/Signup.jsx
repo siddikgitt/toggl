@@ -46,6 +46,13 @@ import { Link } from "react-router-dom";
                       </Flex>
                      
                        <Box mt={"50px"} padding={"20px"}>
+
+                       <Box mb={"40px"} >
+                         <Text mb={"8px"} textAlign={"start"} >
+                            Name
+                          </Text>
+                          <Input  border={"2px"} borderRadius={0} placeholder='Name' type="text" />
+                         </Box>
                          <Box mb={"40px"} >
                          <Text mb={"8px"} textAlign={"start"} >
                             Email
