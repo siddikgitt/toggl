@@ -5,6 +5,7 @@ import {
   HStack,
   useDisclosure,
   useColorModeValue as mode,
+  Text,
 } from "@chakra-ui/react";
 import * as React from "react";
 import { Logo } from "./Logo";
@@ -14,9 +15,14 @@ import { DesktopSubmenu, MobileSubMenu } from "./Submenu";
 import { ToggleButton } from "./ToggleButton";
 import { links } from "./_data";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../store/auth/auth.actions";
 
 const MobileNavContext = (props) => {
   const { isOpen, onToggle } = useDisclosure();
+ 
+  
+
   return (
     <>
       <Flex
@@ -74,6 +80,9 @@ const MobileNavContext = (props) => {
 };
 
 const DesktopNavContent = (props) => {
+  const loginDetail = useSelector((store)=>store.auth.token)
+  const dispatch =  useDispatch()
+
   return (
     <Flex
       className="nav-content__desktop"
@@ -123,11 +132,15 @@ const DesktopNavContent = (props) => {
         <Box
           color={mode("white", "blue.300")}
           fontWeight="bold"
+          cursor={"pointer"}
           _hover={{
             color: "#cb7bc6",
           }}
         >
-          <Link to="/login">Log in</Link>
+          { 
+              loginDetail ? <Text  onClick={()=> dispatch(logout())}>Logout</Text>:<Link to="/login">Log in</Link>
+          }
+       
         </Box>
         <Button
           as="a"

@@ -4,14 +4,21 @@ import {Logo}   from "../../components/Navbar/Logo"
 import { FcGoogle } from "react-icons/fc";
 import { AiFillApple } from "react-icons/ai";
 import reviewBadges from "../../utils/./review-badges.avif"
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { signup } from '../../store/authSignup/authSignup.actions';
 
 
   export const Signup = ()=>{
+
+    const dispatch =  useDispatch()
+    const navigate = useNavigate();
+    const auth = useSelector((store)=>store.authSignup.token)
+    const err = useSelector((store)=>store.authSignup.error)
+   
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-  
+    const [name ,setName] = useState("")
     const handleEmail= (e)=>{
        setEmail(e.target.value);
   
@@ -19,6 +26,24 @@ import { Link } from "react-router-dom";
     const handlePassWord=(e)=>{
       setPassword(e.target.value)
     };
+    const handleName=(e)=>{
+      setName(e.target.value)
+    }
+  
+    const handleSignup = ()=>{
+      dispatch(signup({
+        name:name,
+        email: email, 
+        password: password,
+                }))
+    }  
+    if(auth){
+        navigate("/timer")
+    }
+
+    
+
+
   
     return (
         <>
@@ -51,7 +76,7 @@ import { Link } from "react-router-dom";
                          <Text mb={"8px"} textAlign={"start"} >
                             Name
                           </Text>
-                          <Input  border={"2px"} borderRadius={0} placeholder='Name' type="text" />
+                          <Input onChange={handleName} border={"2px"} borderRadius={0} placeholder='Name' type="text" />
                          </Box>
                          <Box mb={"40px"} >
                          <Text mb={"8px"} textAlign={"start"} >
@@ -68,7 +93,7 @@ import { Link } from "react-router-dom";
                          
                          <Box mb="30px" cursor={"pointer"}  textAlign={"end"}>Forget Password?</Box>
 
-                           <Button _hover={{bg: "rgb(65, 42, 76)" }} p="25px 40px" borderRadius={"30px"} w="100%"  margin="auto" backgroundColor={"#E57CD8"}> Sign up via email </Button>
+                           <Button onClick={handleSignup} _hover={{bg: "rgb(65, 42, 76)" }} p="25px 40px" borderRadius={"30px"} w="100%"  margin="auto" backgroundColor={"#E57CD8"}> Sign up via email </Button>
                            <Box mt={"40px"}>
                             <Text fontSize={"12px"} _hover={{color: '#E57CD8'}} cursor={"pointer"} gap="1rem" textAlign={"start"} >
                             By signing up, you agree to our terms of service, privacy policy and to receiving marketing communication from Toggl Track. You can opt out anytime.
