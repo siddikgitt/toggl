@@ -5,18 +5,20 @@ import { AiFillApple } from "react-icons/ai";
 import { TiLockClosed } from "react-icons/ti";
 import { RiArrowDropRightFill } from "react-icons/ri";
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import  axios from "axios"
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+import { login } from '../../store/auth/auth.actions';
 
 
 
-
-const getUser = async()=>{
-  let res =  await axios.get(``)
-}
 
 
 export const LoginPage =()=>{
+  const dispatch =  useDispatch()
+  const navigate = useNavigate();
+  const auth = useSelector((store)=>store.auth.token)
+  const err = useSelector((store)=>store.auth.error)
+ 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,6 +29,16 @@ export const LoginPage =()=>{
   const handlePassWord=(e)=>{
     setPassword(e.target.value)
   };
+
+  const handleLogin = ()=>{
+      dispatch(login({email: email, 
+                      password: password
+              }))
+  }  
+  if(auth){
+      navigate("/timer")
+  }
+
 
     return(
         <>
@@ -58,7 +70,8 @@ export const LoginPage =()=>{
                          
                          <Box mb="30px" cursor={"pointer"}  textAlign={"end"}>Forget Password?</Box>
 
-                          <Button _hover={{bg: "rgb(65, 42, 76)" }} p="25px 40px" borderRadius={"30px"} w="100%"  margin="auto" backgroundColor={"#E57CD8"}> Log in </Button>
+                          <Button  onClick={handleLogin} _hover={{bg: "rgb(65, 42, 76)" }} p="25px 40px" borderRadius={"30px"} w="100%"  margin="auto" backgroundColor={"#E57CD8"}>
+                             Log in </Button>
                           <Box mt={"40px"}>
                             <Flex  _hover={{color: '#E57CD8'}} cursor={"pointer"} gap="1rem" alignItems={"center"} justifyContent="center">
                              <TiLockClosed size="20px" />   Company login (SSO)  <RiArrowDropRightFill size={"20px"} />
