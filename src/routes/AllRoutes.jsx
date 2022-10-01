@@ -9,6 +9,8 @@ import { Timer } from "../pages/Timer";
 import { Reports } from "../pages/Reports";
 import { Organization } from "../pages/Organization";
 import { Sidebar } from "../components/Sidebar";
+import { Tags } from "../pages/Tags";
+import { Client } from "../pages/Client";
 
 
 const AllRoutes = () => {
@@ -42,7 +44,8 @@ const AllRoutes = () => {
      />
        <Route path="/timer" element={<Timer/>}/>
        <Route path="/reports" element={<Reports/>}/>
-
+       <Route path="/tags" element ={<Tags />} />
+       <Route path="/client"  element ={<Client />} /> 
       </Routes>
       
     </div>

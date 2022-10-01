@@ -1,4 +1,5 @@
 import './App.css';
+import { Tags } from './pages/Tags';
 
 
 import AllRoutes from './routes/AllRoutes';

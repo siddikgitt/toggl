@@ -42,7 +42,7 @@ export const Sidebar=()=>{
             </Flex>
             <Flex alignItems='center' marginBottom='20px'>
             <HiTag style={{color:"white",marginRight:'7px',}}/>
-             <Link to="/tags">   <Text color='white'>Tags</Text></Link>
+             <Link to="/tags">   <Text cursor={"pointer"} color='white'>Tags</Text></Link>
             </Flex>
             <Text marginBottom='10px' textAlign='left' color='rgb(130, 113, 136)'>WORKSPACE</Text>
             <Flex paddingLeft='5px' border='1px solid white' borderRadius='5px' alignItems='center'>

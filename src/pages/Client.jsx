@@ -1,9 +1,11 @@
-import { Box, Button, Flex, Input, Spacer, Text } from "@chakra-ui/react"
+import { Box, Button, Flex, Image, Input, Spacer, Text } from "@chakra-ui/react"
 import { Sidebar } from "../components/Sidebar"
 import { BiSearch } from "react-icons/bi";
+import { useState } from "react";
+import { CreateTag } from "../components/createtags";
 
-export const client =()=>{
-
+export const Client =()=>{
+    const [open, setOpen] = useState(false)
     return(
         <>
          <Flex>
@@ -30,7 +32,10 @@ export const client =()=>{
                      <Text mt="25px" fontWeight={"700"}>Track work by client</Text>  
                      <Text color={"grey"} lineHeight={"1rem"} fontSize={"15px"}> Categorize your time entries by clinet for easy billing</Text> 
 
-                     <Button  marginTop={"22px"} mb="5px" color={"white"} backgroundColor={"#E57CD8"} borderRadius={"25px"} h="40px">Create one</Button>
+                     <Button onClick={()=>setOpen(!open)} marginTop={"22px"} mb="5px" color={"white"} backgroundColor={"#E57CD8"} borderRadius={"25px"} h="40px">Create one</Button>
+                     {
+                         open &&  <CreateTag open={open} setopen={setOpen} tagline={"New Client"} textB = {"Create"} plach={"New Client ..."} />
+                       }
                      <Text display={"block"} as="u" color={"#E57CD8"} cursor="pointer" > Learn more</Text>
             </Box>
           
