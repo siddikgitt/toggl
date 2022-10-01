@@ -1,8 +1,12 @@
 import { Box, Button, Flex, Image, Input, Spacer, Text } from "@chakra-ui/react"
 import { Sidebar } from "../components/Sidebar"
 import { BiSearch } from "react-icons/bi";
-export const Tags = ()=>{
+import { useState } from "react";
+import { CreateTag } from "../components/createtags";
 
+export const Tags = ()=>{
+   const [open, setOpen] = useState(false)
+  
     return(
         <>
          <Flex>
@@ -24,18 +28,20 @@ export const Tags = ()=>{
 
             <Box  boxShadow={ "rgba(149, 157, 165, 0.2) 0px 8px 24px"} h="450px" placeItems={"center"} margin={"auto"} border={'1px solid white '} width={"70%"}>
             
-            <Image  margin={"auto"} marginTop="100px" width={"125px"} src="https://web-assets.toggl.com/app/assets/images/61ce0ce0f6d73773.png" />  
+            <Image  margin={"auto"} marginTop="70px" width={"125px"} src="https://web-assets.toggl.com/app/assets/images/388b5d9b02167b77.png" />  
 
                      <Text mt="25px" fontWeight={"700"}>Categorize your time and get more insights</Text>  
                      <Text fontWeight={"500"} m="auto" w="65%"  color={"grey"} lineHeight={"1rem"} fontSize={"15px"}> Tags allow you to add even more context to time entries, beyond clients 
                            and projects.</Text> 
 
-                     <Button  marginTop={"22px"} mb="5px" color={"white"} backgroundColor={"#E57CD8"} borderRadius={"25px"} h="40px">Create one</Button>
+                     <Button onClick={ ()=> setOpen(!open)} marginTop={"22px"} mb="5px" color={"white"} backgroundColor={"#E57CD8"} borderRadius={"25px"} h="40px">Create one</Button>
+                       {
+                         open &&  <CreateTag open={open} setopen={setOpen} tagline={"New Tag"} textB = {"Create"} plach={"New tag.."} />
+                       }
                      <Text display={"block"} as="u" color={"#E57CD8"} cursor="pointer" > Learn more</Text>
             </Box>
 
-
-
+                
           
           </Box>
         
