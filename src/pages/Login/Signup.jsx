@@ -51,7 +51,7 @@ import { Link } from "react-router-dom";
                          <Text mb={"8px"} textAlign={"start"} >
                             Name
                           </Text>
-                          <Input onChange={handleEmail}  border={"2px"} borderRadius={0} placeholder='Name' type="text" />
+                          <Input  border={"2px"} borderRadius={0} placeholder='Name' type="text" />
                          </Box>
                          <Box mb={"40px"} >
                          <Text mb={"8px"} textAlign={"start"} >
