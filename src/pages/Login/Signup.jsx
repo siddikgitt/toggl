@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Input, Spacer, Text } from "@chakra-ui/react"
+import { Box, Button, Flex, Image, Input, Text } from "@chakra-ui/react"
 import { useState } from "react";
 import {Logo}   from "../../components/Navbar/Logo"
 import { FcGoogle } from "react-icons/fc";
@@ -14,7 +14,7 @@ import { signup } from '../../store/authSignup/authSignup.actions';
     const dispatch =  useDispatch()
     const navigate = useNavigate();
     const auth = useSelector((store)=>store.authSignup.token)
-    const err = useSelector((store)=>store.authSignup.error)
+    //const err = useSelector((store)=>store.authSignup.error)
    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -135,7 +135,6 @@ import { signup } from '../../store/authSignup/authSignup.actions';
           display: "flex",
           color: "#2C1338",
           padding: "23px",
-          display: "flex",
           justifyContent: "space-between",
         
         }
