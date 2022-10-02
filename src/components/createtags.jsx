@@ -2,11 +2,16 @@ import { Button, FormControl, Input, Modal,
          ModalBody, ModalCloseButton, 
          ModalContent, ModalHeader, ModalOverlay, } from "@chakra-ui/react";
 import React from "react";
+import { useState } from "react";
 
-export const  CreateTag=({open, setopen, textB , tagline, plach }) =>{
-      
+export const  CreateTag=({open, setopen, textB , tagline, plach , func, token , handleData }) =>{
+     const [text, setText] = useState("") 
+    
     const onClose = ()=>{
+        func(token, text)
+      handleData()
         setopen(false)
+        
     }
   
     const initialRef = React.useRef(null)
@@ -29,7 +34,7 @@ export const  CreateTag=({open, setopen, textB , tagline, plach }) =>{
             <ModalBody pb={6}>
               <FormControl mb="20px">
               
-                <Input ref={initialRef} placeholder={plach} />
+                <Input onChange={(e)=>setText(e.target.value)} ref={initialRef} placeholder={plach} />
               </FormControl>
              
               <Button backgroundColor="#E57CD8" color="white" w="100%" onClick={onClose}> {textB} </Button>
