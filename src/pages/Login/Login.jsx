@@ -16,7 +16,7 @@ import { login } from '../../store/auth/auth.actions';
 export const LoginPage =()=>{
   const dispatch =  useDispatch()
   const navigate = useNavigate();
-  const auth = useSelector((store)=>store.auth.token)
+  const {token ,loading} = useSelector((store)=>store.auth)
   const err = useSelector((store)=>store.auth.error)
  
   const [email, setEmail] = useState("");
@@ -35,7 +35,7 @@ export const LoginPage =()=>{
                       password: password
               }))
   }  
-  if(auth){
+  if(token){
       navigate("/timer")
   }
 
@@ -69,9 +69,10 @@ export const LoginPage =()=>{
                          </Box>
                          
                          <Box mb="30px" cursor={"pointer"}  textAlign={"end"}>Forget Password?</Box>
-
-                          <Button  onClick={handleLogin} _hover={{bg: "rgb(65, 42, 76)" }} p="25px 40px" borderRadius={"30px"} w="100%"  margin="auto" backgroundColor={"#E57CD8"}>
+                        
+                          <Button onClick={handleLogin} isLoading={loading} _hover={{bg: "rgb(65, 42, 76)" }} p="25px 40px" borderRadius={"30px"} w="100%"  margin="auto" backgroundColor={"#E57CD8"}>
                              Log in </Button>
+                             
                           <Box mt={"40px"}>
                             <Flex  _hover={{color: '#E57CD8'}} cursor={"pointer"} gap="1rem" alignItems={"center"} justifyContent="center">
                              <TiLockClosed size="20px" />   Company login (SSO)  <RiArrowDropRightFill size={"20px"} />
