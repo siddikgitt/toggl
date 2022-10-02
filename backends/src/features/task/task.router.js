@@ -29,7 +29,6 @@ app.get("/:id", async (req, res) => {
     try{
         let task = await Task.find({userID: req.userID, projectID: id});
         res.send(task);
-        
     }
     catch(e){
         res.status(500).send(e.message);
