@@ -1,11 +1,11 @@
 
-import { Auth_Signup_Error, Auth_Signup_Loading, Auth_Signup_Logout, Auth_Signup_Success } from "./authSignup.types"
+import { Auth_Signup_Error, Auth_Signup_Loading, Auth_Signup_Success } from "./authSignup.types"
 
-let tokens  = JSON.parse(localStorage.getItem("token")) || ""
+//let tokens  = JSON.parse(localStorage.getItem("token")) || ""
 let initialState = {
     loading : false,
     error: false,
-    token:  tokens
+    
 }
 
 export const authSignupReducer = (state = initialState, {type, payload})=>{

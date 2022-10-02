@@ -16,8 +16,10 @@ import { login } from '../../store/auth/auth.actions';
 export const LoginPage =()=>{
   const dispatch =  useDispatch()
   const navigate = useNavigate();
+
   const {token ,loading} = useSelector((store)=>store.auth)
   const err = useSelector((store)=>store.auth.error)
+
  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

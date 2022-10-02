@@ -7,8 +7,8 @@ import { LoginPage } from "../pages/Login/Login";
 import { Signup } from "../pages/Login/Signup";
 import { Timer } from "../pages/Timer";
 import { Reports } from "../pages/Reports";
-import { Organization } from "../pages/Organization";
-import { Sidebar } from "../components/Sidebar";
+//import { Organization } from "../pages/Organization";
+//import { Sidebar } from "../components/Sidebar";
 import { Tags } from "../pages/Tags";
 import { Client } from "../pages/Client";
 
