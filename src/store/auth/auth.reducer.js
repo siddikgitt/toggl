@@ -1,11 +1,10 @@
 //import { logout } from "./auth.actions"
 import { Auth_Error, Auth_Loading, Auth_Logout, Auth_Success } from "./auth.types"
 
-let tokens  = JSON.parse(localStorage.getItem("token")) || ""
+
 let initialState = {
     loading : false,
     error: false,
-    token:  tokens
 }
 
 export const authReducer = (state = initialState, {type, payload})=>{
