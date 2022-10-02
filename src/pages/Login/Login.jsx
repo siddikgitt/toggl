@@ -17,7 +17,7 @@ export const LoginPage =()=>{
   const dispatch =  useDispatch()
   const navigate = useNavigate();
   const auth = useSelector((store)=>store.auth.token)
-  const err = useSelector((store)=>store.auth.error)
+  //const err = useSelector((store)=>store.auth.error)
  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

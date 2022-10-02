@@ -1,9 +1,9 @@
-import { Box, Button, Center, Divider, Flex, Image, Input, Spacer, Text } from '@chakra-ui/react'
-import {AiTwotoneSetting,AiOutlineTeam,AiFillProject} from "react-icons/ai"
+import { Box, Button, Flex, Image, Text } from '@chakra-ui/react'
+import {AiOutlineTeam,AiFillProject} from "react-icons/ai"
 import {BsFillClockFill,BsFillFilePersonFill,BsPersonCircle} from "react-icons/bs"
 import {TbReport} from "react-icons/tb"
 import {MdOutlineInsights} from "react-icons/md";
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { HiTag } from "react-icons/hi";
 
