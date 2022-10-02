@@ -10,7 +10,6 @@ const authMiddleware = async (req, res, next) => {
       let user = await User.findById(id);
       if(user){
         req.userID = id
-        
         next();
       }
       else{
@@ -26,10 +25,11 @@ const app = express.Router();
 app.use(authMiddleware);
 
 app.get("/:id", async (req, res) => {
-    const id = req.params;
+    const id = req.params.id;
     try{
         let task = await Task.find({userID: req.userID, projectID: id});
         res.send(task);
+        
     }
     catch(e){
         res.status(500).send(e.message);
@@ -47,12 +47,14 @@ app.get("/", async (req, res) => {
 })
 
 app.post("/:id", async (req, res) => {
-    const id = req.params;
+    const id = req.params.id;
     try {
         let task = await Task.create({
             ...req.body,
+            userID: req.userID,
             projectID: id
         })
+        res.send(task);
     } catch (e) {
         res.status(500).send(e.message);
     }
