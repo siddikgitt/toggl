@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 
@@ -10,25 +8,20 @@ import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import { Box } from "@chakra-ui/react";
 
 export const Calendar = () => {
+
   const [selectedDate, setSelectedDate] = useState(Date.now());
   return (
-    <Box border="1px" paddingLeft="2px">
-    <DatePicker  selected={selectedDate} onChange={(date) => setSelectedDate(date)} dateFormat='dd/MM/yyyy'
-    minDate={new Date()}
-    showYearDropdown
-    scrollableYearDropdown
-    />
-    </Box>
+    <>
+      <Box border="1px" paddingLeft="2px">
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          dateFormat="dd/MM/yyyy"
+          minDate={new Date()}
+          showYearDropdown
+          scrollableYearDropdown
+        />
+      </Box>
+    </>
   );
 };
-
-
-
-
-
-
-
-
-
-
-

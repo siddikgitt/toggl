@@ -20,9 +20,7 @@ import { logout } from "../../store/auth/auth.actions";
 
 const MobileNavContext = (props) => {
   const { isOpen, onToggle } = useDisclosure();
- 
   
-
   return (
     <>
       <Flex

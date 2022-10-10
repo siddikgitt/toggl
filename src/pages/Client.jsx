@@ -44,7 +44,6 @@ export const Client =()=>{
     const [open, setOpen] = useState(false)
     const [data, setData] = useState([])
   
-
     const  handleData = ()=>{
       
        getData(token).then((res)=>{

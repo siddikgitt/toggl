@@ -6,6 +6,7 @@ import {
   Flex,
   Image,
   Input,
+  Select,
   Spacer,
   Table,
   TableContainer,
@@ -34,18 +35,24 @@ import { Stopwatch } from "../components/Stopwatch";
 import { Sidebar } from "../components/Sidebar";
 import axios from "axios";
 export const Timer = () => {
+  const [inputData, setInputData] = useState("");
+  console.log(inputData);
+
   const [data, setdata] = useState([]);
   const getData = async () => {
-    let a = await axios.get(
-      "https://mysterious-shore-42044.herokuapp.com/tasks",
-      {
-        headers: {
-          token: localStorage.getItem("token"),
-        },
-      }
-    );
+    //   "https://mysterious-shore-42044.herokuapp.com/tasks",
+
+    let a = await axios.get(`http://localhost:8080/tasks`, {
+      headers: {
+        token: localStorage.getItem("token"),
+      },
+    });
     setdata(a.data);
   };
+
+  const updateDataCount = () => {
+    getData();
+  }
 
   useEffect(() => {
     getData();
@@ -70,12 +77,18 @@ export const Timer = () => {
             paddingLeft="20px"
             paddingRight="20px"
           >
-            <Input
+            <Select onChange={(e) => setInputData(e.target.value)} w="70%" placeholder="Select Task">
+            {data.map((el) => (
+              <option key={el._id} value={el._id}>{el.taskName}</option>
+            ))}
+            </Select>
+            {/* <Input
               border="none"
               w="70%"
               fontFamily="Roboto, Helvetica, sans-serif"
               placeholder="What are you working on?"
-            />
+              onChange={(e) => setInputData(e.target.value)}
+            /> */}
             <Spacer />
             <BsFillCreditCardFill size="20" color="rgb(126,110,133)" />
             <Spacer />
@@ -84,7 +97,7 @@ export const Timer = () => {
             <BiDollar size="20" color="rgb(126,110,133)" />
             <Spacer />
             <Box>
-              <Stopwatch />
+              <Stopwatch updateDataCount={updateDataCount} taskID={inputData} />
             </Box>
             <Spacer />
           </Flex>
@@ -106,10 +119,10 @@ export const Timer = () => {
                 </Center> */}
             </Box>
             <Text>WEEK TOTAL</Text>
-            <Spacer />
+            {/* <Spacer />
             <Text>00:00:00</Text>
-            <Spacer />
-            <Box>
+            <Spacer /> */}
+            <Box paddingLeft={5}>
               <Calendar />
             </Box>
             <Spacer />
@@ -122,14 +135,14 @@ export const Timer = () => {
             <Spacer />
           </Flex>
           <Box>
-            <Text
+            {/* <Text
               paddingLeft="20px"
               paddingBottom="5px"
               textAlign="left"
               color="rgb(126,110,133)"
             >
               Flipkart PROJECT
-            </Text>
+            </Text> */}
             <hr
               style={{
                 background: "rgb(126,110,133)",
@@ -146,19 +159,21 @@ export const Timer = () => {
             <Table size="sm">
               <Thead>
                 <Tr>
-                  <Th>PROJECT NAME</Th>
-                  <Th>TASK NAME</Th>
+                  <Th>Project Name</Th>
+                  <Th>Task Name</Th>
+                  <Th>Task Date</Th>
                   <Th>Start Time</Th>
                   <Th>End Time</Th>
                   <Th>Counter Time</Th>
                 </Tr>
               </Thead>
-              
+
               <Tbody>
                 {data.map((el) => (
-                  <Tr key={el.userID}>
+                  <Tr key={el.userID + Math.random()}>
                     <Td>{el.projectID.name}</Td>
                     <Td>{el.taskName}</Td>
+                    <Td>{el.taskDate}</Td>
                     <Td>{el.startTime}</Td>
                     <Td>{el.endTime}</Td>
                     <Td>{el.counterTime}</Td>

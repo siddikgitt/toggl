@@ -8,11 +8,31 @@ import { FaRegStopCircle } from "react-icons/fa";
 import { Box, Flex } from "@chakra-ui/react";
 import axios from "axios";
 
-export const Stopwatch = () => {
+export const Stopwatch = ({updateDataCount, taskID}) => {
+
+  const updateData = async(time) => {
+    let a = await axios.patch(`http://localhost:8080/tasks/${taskID}`, {
+      "counterTime": time
+    }, {
+      headers: {
+        token: localStorage.getItem("token"),
+      },
+    });
+  }
+
   const [time, setTime] = useState(0);
   const [timerOn, setTimeOn] = useState(false);
 
   const Stop = () => {
+    let updateTime =
+      Math.floor(time / 3600) +
+      "hr:" +
+      Math.floor((time % 3600) / 60) +
+      "min:" +
+      Math.floor((time % 3600) % 60) + "sec";
+    console.log(updateTime);
+    updateData(updateTime);
+    updateDataCount();
     setTime(0);
     setTimeOn(false);
   };
@@ -22,8 +42,8 @@ export const Stopwatch = () => {
 
     if (timerOn) {
       interval = setInterval(() => {
-        setTime((prevTime) => prevTime + 10);
-      }, 10);
+        setTime((prevTime) => prevTime + 1);
+      }, 1000);
     } else {
       clearInterval(interval);
     }
@@ -34,13 +54,13 @@ export const Stopwatch = () => {
     <Flex alignItems="center">
       <Box paddingRight="30px" alignItems="center">
         <span style={{ fontSize: "25px", color: "rgb(149,137,155)" }}>
-          {("0" + Math.floor((time / 3600000) % 60)).slice(-2)}:
+          {Math.floor(time / 3600)}:
         </span>
         <span style={{ fontSize: "25px", color: "rgb(149,137,155)" }}>
-          {("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
+          {Math.floor((time % 3600) / 60)}:
         </span>
         <span style={{ fontSize: "25px", color: "rgb(149,137,155)" }}>
-          {("0" + Math.floor((time / 1000) % 60)).slice(-2)}
+          {Math.floor((time % 3600) % 60)}
         </span>
         {/* <span>{("0"+((time/10)%100)).slice(-2)}</span> */}
       </Box>
