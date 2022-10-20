@@ -1,6 +1,6 @@
 const express = require("express");
 const User = require("../user/user.model");
-const Client = require("./client.model");
+const Tag = require("./tags.model");
 
 const authMiddleware = async (req, res, next) => {
     let id = req.headers.token;
@@ -11,7 +11,7 @@ const authMiddleware = async (req, res, next) => {
             next();
         }
         else{
-            return res.send("No Clients found")
+            return res.send("No Tag found")
         }
     }
     else{
@@ -24,7 +24,7 @@ app.use(authMiddleware);
 
 app.get("/", async (req, res) => {
     try{
-        let client = await Client.find({userID: req.userID}).populate({path: "userID",select: "-password"});
+        let client = await Tag.find({userID: req.userID}).populate({path: "userID",select: "-password"});
         return res.send(client);
     }
     catch(e){
@@ -35,8 +35,8 @@ app.get("/", async (req, res) => {
 app.delete("/:id", async (req, res) => {
     let id = req.params.id;
     try{
-        let client = await Client.findByIdAndDelete({_id:id})
-        return res.status(200).send({message:"client deleted successfully"})
+        let client = await Tag.findByIdAndDelete({_id:id})
+        return res.status(200).send({message:"Tag deleted successfully"})
     }
     catch(e){
         res.status(500).send(e.message);
@@ -46,12 +46,12 @@ app.delete("/:id", async (req, res) => {
 // Create Client
 app.post("/", async (req, res) => {
     try{
-        let client = await Client.findOne({ userID: req.userID, name: req.body.name});
+        let client = await Tag.findOne({ userID: req.userID, name: req.body.name});
         if(client){
-            return res.send("Client already exists");
+            return res.send("Tag already exists");
         }
         else{
-            let cl = await Client.create({
+            let cl = await Tag.create({
                 ...req.body,
                 userID: req.userID
             })

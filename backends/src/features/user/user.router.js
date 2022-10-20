@@ -9,6 +9,12 @@ app.get("/", async(req, res) => {
   res.send(users);  
 });
 
+app.get("/:id", async(req, res) => {
+  let id = req.params.id
+  let users = await User.findById(id);
+  res.send(users);  
+});
+
 app.post("/login", async (req, res) => {
   let {email, password} = req.body;
   try{

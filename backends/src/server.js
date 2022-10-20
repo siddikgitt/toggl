@@ -6,6 +6,7 @@ const userRouter = require("./features/user/user.router");
 const taskRouter = require("./features/task/task.router");
 const projectRouter = require("./features/project/project.router");
 const teamMemberRouter = require("./features/team_member/tm.router");
+const tagRouter = require("./features/tags/tags.router");
 
 const app = express();
 app.use(cors())
@@ -16,6 +17,7 @@ app.use("/projects", projectRouter);
 app.use("/tasks", taskRouter);
 app.use("/team_members", teamMemberRouter);
 app.use("/users", userRouter)
+app.use("/tags", tagRouter)
 
 
 let PORT = 8080

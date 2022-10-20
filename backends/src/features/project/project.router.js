@@ -26,7 +26,7 @@ app.use(authMiddleware);
 
 app.get("/", async (req, res) => {
     try{
-        let project = await Project.find({userId: req.userID}).populate("team_memberID", "clientID");
+        let project = await Project.find({userId: req.userID}).populate("clientID").populate("team_memberID");
         res.send(project);
     }
     catch(e){

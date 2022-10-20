@@ -7,15 +7,32 @@ import {
 } from "react-icons/bs";
 import { TbReport } from "react-icons/tb";
 import { MdOutlineInsights } from "react-icons/md";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { HiTag } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 import { logout } from "../store/auth/auth.actions";
+import axios from "axios";
 
 export const Sidebar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [name, setname] = useState("");
+  const [email, setemail] = useState("")
+
+  const getName = () => {
+    let token = localStorage.getItem("token");
+    axios.get(`http://localhost:8080/users/${token}`).then((res) => {
+      // console.log(res.data);
+      setemail(res.data.email)
+      setname(res.data.name)
+    })
+  }
+
+  useEffect(() => {
+    getName();
+  }, [])
+  
 
   return (
     <>
@@ -71,7 +88,9 @@ export const Sidebar = () => {
         </Text>
         <Flex alignItems="center">
           <AiFillProject style={{ color: "white", marginRight: "7px" }} />
+          <Link to={"/project"}>
           <Text color="white">Projects</Text>
+          </Link>
         </Flex>
         <Flex alignItems="center">
           <BsFillFilePersonFill
@@ -107,10 +126,10 @@ export const Sidebar = () => {
           <BsPersonCircle color="white" />
           <Box paddingLeft="10px">
             <Text textAlign="left" color="white">
-              abc
+              {name}
             </Text>
             <Text textAlign="left" color="white">
-              abc@gmail.com
+              {email}
             </Text>
           </Box>
         </Flex>

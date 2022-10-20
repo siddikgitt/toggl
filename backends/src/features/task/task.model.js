@@ -18,7 +18,8 @@ const taskSchema = new mongoose.Schema({
     taskDate: {type: String, required: true},
     startTime: {type: Number},
     endTime: {type: Number},
-    counterTime: {type: String}
+    counterTime: {type: String},
+    seconds: {type: Number}
 });
 
 const Task = mongoose.model("task", taskSchema);

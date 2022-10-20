@@ -8,30 +8,50 @@ import { FaRegStopCircle } from "react-icons/fa";
 import { Box, Flex } from "@chakra-ui/react";
 import axios from "axios";
 
-export const Stopwatch = ({updateDataCount, taskID}) => {
-
-  const updateData = async(time) => {
-    let a = await axios.patch(`http://localhost:8080/tasks/${taskID}`, {
-      "counterTime": time
-    }, {
-      headers: {
-        token: localStorage.getItem("token"),
+export const Stopwatch = ({ updateDataCount, taskID }) => {
+  const updateData = async (time, seconds) => {
+    let a = await axios.patch(
+      `http://localhost:8080/tasks/${taskID}`,
+      {
+        counterTime: time,
+        seconds: seconds
       },
-    });
-  }
+      {
+        headers: {
+          token: localStorage.getItem("token"),
+        },
+      }
+    );
+  };
 
   const [time, setTime] = useState(0);
   const [timerOn, setTimeOn] = useState(false);
+  const [sec, setSec] = useState(0);
 
-  const Stop = () => {
+  const Stop = async () => {
+    let seconds = await axios
+      .get(`http://localhost:8080/tasks/${taskID}`, {
+        headers: {
+          token: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        // console.log(res.data.seconds);
+        // setSec(res.data.seconds)
+        // setTime(time => time + sec);
+        return res.data.seconds;
+      });
+      seconds += time;
+      console.log(seconds);
     let updateTime =
-      Math.floor(time / 3600) +
+      Math.floor(seconds / 3600) +
       "hr:" +
-      Math.floor((time % 3600) / 60) +
+      Math.floor((seconds % 3600) / 60) +
       "min:" +
-      Math.floor((time % 3600) % 60) + "sec";
+      Math.floor((seconds % 3600) % 60) +
+      "sec";
     console.log(updateTime);
-    updateData(updateTime);
+    updateData(updateTime, seconds);
     updateDataCount();
     setTime(0);
     setTimeOn(false);

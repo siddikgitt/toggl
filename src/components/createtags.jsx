@@ -4,11 +4,11 @@ import { Button, FormControl, Input, Modal,
 import React from "react";
 import { useState } from "react";
 
-export const  CreateTag=({open, setopen, textB , tagline, plach , func, token , handleData }) =>{
+export const  CreateTag=({open, setopen, textB , tagline, plach , func , handleData }) =>{
      const [text, setText] = useState("") 
     
     const onClose = ()=>{
-        func(token, text)
+        func(text)
       handleData()
         setopen(false)
         

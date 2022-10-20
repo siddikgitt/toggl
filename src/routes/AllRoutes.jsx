@@ -11,6 +11,7 @@ import { Reports } from "../pages/Reports";
 //import { Sidebar } from "../components/Sidebar";
 import { Tags } from "../pages/Tags";
 import { Client } from "../pages/Client";
+import { Project } from "../pages/Project";
 
 
 const AllRoutes = () => {
@@ -46,6 +47,8 @@ const AllRoutes = () => {
        <Route path="/reports" element={<Reports/>}/>
        <Route path="/tags" element ={<Tags />} />
        <Route path="/client"  element ={<Client />} /> 
+       <Route path="/project"  element ={<Project />} /> 
+       
       </Routes>
       
     </div>

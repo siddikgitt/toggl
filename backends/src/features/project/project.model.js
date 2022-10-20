@@ -16,11 +16,12 @@ const projectSchema = new mongoose.Schema({
         ref: "user",
         required: true
     },
-    visibility: {type: Boolean, required: true},
-    recurring: {type: Boolean, required: true},
-    timeEstimate: {type: Number},
+    name: {type: String, required: true},
+    visibility: {type: Boolean},
+    recurring: {type: Boolean},
+    timeEstimate: {type: Number, required: true},
     hourlyRate: {type: Number},
-    fixedRate: {type: Number},
+    fixedRate: {type: Number, required: true},
 });
 
 const Project = mongoose.model("project", projectSchema);

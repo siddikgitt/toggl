@@ -24,8 +24,10 @@ app.use(authMiddleware);
 
 app.get("/:id", async (req, res) => {
   const id = req.params.id;
+  console.log(id);
   try {
-    let task = await Task.find({ userID: req.userID, projectID: id }).populate("projectID");
+    // let task = await Task.find({ userID: req.userID, _id: id }).populate("projectID");
+    let task = await Task.findOne({ userID: req.userID, _id: id });
     res.send(task);
   } catch (e) {
     res.status(500).send(e.message);
@@ -40,6 +42,7 @@ app.get("/", async (req, res) => {
     res.status(500).send(e.message);
   }
 });
+
 
 app.post("/:id", async (req, res) => {
   const id = req.params.id;
@@ -69,7 +72,7 @@ app.post("/:id", async (req, res) => {
 app.patch("/:id", async(req, res) => {
   let id = req.params.id;
   let counterUpdate = req.body;
-  console.log(id, counterUpdate);
+  // console.log(id, counterUpdate);
   try{
     let task = await Task.findByIdAndUpdate(id, counterUpdate)
     res.send(task);
