@@ -1,10 +1,5 @@
 # TOGGL TRACK CLONE
 
-Website is not responsive because of time constraint.
-Soon we'll make this project responsive.
-
-![alt text](https://miro.medium.com/max/1100/1*nzkfdT3q8ytPGhRDt7n7Sw.png)
-
 We are students of the Masai School. Currently, we are all in unit 5. In the Masai School, at the end of every unit, the last week is called construct week. In which every student of Masai School has to build a project.
 
 On 26th September, we got the name of the members and the project. We have to build the clone of the toggl track.com site. It is the most popular time tracking web site.
@@ -14,9 +9,13 @@ On 26th September, we got the name of the members and the project. We have to bu
 2. Sunil Ingole.
 3. Prashant Kumar.
 4. Rohit Yadav.
+
 We had a week to build the project.
 
 We use HTML, CSS , React-JS, Redux, Express, MongoDB, Chakra-ui and some bit of Bootstrap to build the project.
+
+Website is not responsive because of time constraint.
+Soon we'll make this project responsive.
 
 ## Landing Page.
 
