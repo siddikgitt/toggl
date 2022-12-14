@@ -11,7 +11,7 @@ import axios from "axios";
 export const Stopwatch = ({ updateDataCount, taskID }) => {
   const updateData = async (time, seconds) => {
     let a = await axios.patch(
-      `http://localhost:8080/tasks/${taskID}`,
+      `https://web-production-fc34.up.railway.app/tasks/${taskID}`,
       {
         counterTime: time,
         seconds: seconds
@@ -29,8 +29,9 @@ export const Stopwatch = ({ updateDataCount, taskID }) => {
   const [sec, setSec] = useState(0);
 
   const Stop = async () => {
+    setTimeOn(false);
     let seconds = await axios
-      .get(`http://localhost:8080/tasks/${taskID}`, {
+      .get(`https://web-production-fc34.up.railway.app/tasks/${taskID}`, {
         headers: {
           token: localStorage.getItem("token"),
         },
@@ -51,10 +52,9 @@ export const Stopwatch = ({ updateDataCount, taskID }) => {
       Math.floor((seconds % 3600) % 60) +
       "sec";
     console.log(updateTime);
-    updateData(updateTime, seconds);
-    updateDataCount();
+    await updateData(updateTime, seconds);
+    await updateDataCount();
     setTime(0);
-    setTimeOn(false);
   };
 
   useEffect(() => {

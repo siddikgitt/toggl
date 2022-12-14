@@ -39,10 +39,10 @@ export const Timer = () => {
   console.log(inputData);
 
   const [data, setdata] = useState([]);
-  const getData = async () => {
+  const getData = async() => {
     //   "https://mysterious-shore-42044.herokuapp.com/tasks",
 
-    let a = await axios.get(`http://localhost:8080/tasks`, {
+    let a = await axios.get(`https://web-production-fc34.up.railway.app/tasks`, {
       headers: {
         token: localStorage.getItem("token"),
       },
@@ -50,8 +50,9 @@ export const Timer = () => {
     setdata(a.data);
   };
 
-  const updateDataCount = () => {
-    getData();
+  const updateDataCount = async() => {
+    await getData();
+    console.log(data);;
   }
 
   useEffect(() => {

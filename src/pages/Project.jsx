@@ -40,7 +40,7 @@ export const project = async (text) => {
   let abc = localStorage.getItem("token");
   let data = await axios
     .post(
-      "http://localhost:8080/project",
+      "https://web-production-fc34.up.railway.app/project",
       { name: text },
       { headers: { token: abc } }
     )
@@ -53,7 +53,7 @@ export const project = async (text) => {
 export const getData = async () => {
   let abc = localStorage.getItem("token");
   let data = await axios
-    .get("http://localhost:8080/projects", { headers: { token: abc } })
+    .get("https://web-production-fc34.up.railway.app/projects", { headers: { token: abc } })
     .then((res) => {
       //   console.log(res.data);
       return res.data;
@@ -64,7 +64,7 @@ export const getData = async () => {
 export const deletePost = async (id) => {
   let abc = localStorage.getItem("token");
   let data = await axios
-    .delete(`http://localhost:8080/clients/${id}`, { headers: { token: abc } })
+    .delete(`https://web-production-fc34.up.railway.app/clients/${id}`, { headers: { token: abc } })
     .then((res) => {
       console.log(res.data);
       return res.data;
@@ -75,7 +75,7 @@ export const projectfn = async (projectName, rate, days, clientID, teamID) => {
   let abc = localStorage.getItem("token");
   let data = await axios
     .post(
-      "http://localhost:8080/projects",
+      "https://web-production-fc34.up.railway.app/projects",
       { clientID: clientID, team_memberID: teamID, fixedRate: rate, timeEstimate: days, name: projectName},
       { headers: { token: abc } }
     )
@@ -230,7 +230,8 @@ export const Project = () => {
                 {data.map((el) => (
                   <Tr key={el.userID + Math.random()}>
                     <Td>{el.name}</Td>
-                    <Td>{el.clientID.name}</Td>
+                    {/* fix this bug */}
+                    {/* <Td>{el.clientID.name}</Td> */}
                     <Td>{el.timeEstimate} days</Td>
                     <Td>{`$${el.fixedRate}`}</Td>
                     <Td>{el.team_memberID.groups}</Td>

@@ -20,7 +20,7 @@ export const authSignupReducer = (state = initialState, {type, payload})=>{
         }
         case Auth_Signup_Success: {
             if(payload.token){
-                localStorage.setItem("token", JSON.stringify(payload.token))
+                localStorage.setItem("token", payload.token)
             }
             return {
                 ...state,

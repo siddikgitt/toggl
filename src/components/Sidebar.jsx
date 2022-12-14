@@ -22,7 +22,7 @@ export const Sidebar = () => {
 
   const getName = () => {
     let token = localStorage.getItem("token");
-    axios.get(`http://localhost:8080/users/${token}`).then((res) => {
+    axios.get(`https://web-production-fc34.up.railway.app/users/${token}`).then((res) => {
       // console.log(res.data);
       setemail(res.data.email)
       setname(res.data.name)

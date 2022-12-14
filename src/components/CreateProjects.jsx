@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 const getData = async (token) => {
   let abc = localStorage.getItem("token");
   let data = await axios
-    .get("http://localhost:8080/clients", { headers: { token: abc } })
+    .get("https://web-production-fc34.up.railway.app/clients", { headers: { token: abc } })
     .then((res) => {
       // console.log(res.data);
       return res.data;
@@ -29,7 +29,7 @@ const getData = async (token) => {
 const getTeamData = async () => {
   let abc = localStorage.getItem("token");
   let data = await axios
-    .get("http://localhost:8080/team_members", { headers: { token: abc } })
+    .get("https://web-production-fc34.up.railway.app/team_members", { headers: { token: abc } })
     .then((res) => {
       // console.log(res.data);
       return res.data;

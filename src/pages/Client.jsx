@@ -26,7 +26,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 export const client = async (text) => {
   let abc = localStorage.getItem("token");
-  let data = await axios.post("http://localhost:8080/clients", {name: text},{headers: {token: abc}}).then((res) => {
+  let data = await axios.post("https://web-production-fc34.up.railway.app/clients", {name: text},{headers: {token: abc}}).then((res) => {
     // console.log(res.data);
     return res.data
   })
@@ -34,7 +34,7 @@ export const client = async (text) => {
 };
 export const getData = async() => {
   let abc = localStorage.getItem("token");
-  let data = await axios.get("http://localhost:8080/clients", {headers: {token: abc}}).then((res) => {
+  let data = await axios.get("https://web-production-fc34.up.railway.app/clients", {headers: {token: abc}}).then((res) => {
     // console.log(res.data);
     return res.data
   })
@@ -43,10 +43,11 @@ export const getData = async() => {
 
 export const deletePost = async (id) => {
   let abc = localStorage.getItem("token");
-  let data = await axios.delete(`http://localhost:8080/clients/${id}`, {headers: {token: abc}}).then((res) => {
-    console.log(res.data);
+  let data = await axios.delete(`https://web-production-fc34.up.railway.app/clients/${id}`, {headers: {token: abc}}).then((res) => {
+    // console.log(res.data);
     return res.data
   })
+  return data
 };
 
 export const Client = () => {
@@ -66,8 +67,8 @@ export const Client = () => {
       setData(res);
     });
   };
-  const handleDelete = (id) => {
-    deletePost(id);
+  const handleDelete = async(id) => {
+    await deletePost(id);
     handleData();
   };
 

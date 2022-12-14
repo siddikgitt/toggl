@@ -10,7 +10,7 @@ export const login = (creds) => async (dispatch) => {
   dispatch({ type: Auth_Loading });
   try {
     let res = await axios.post(
-      `https://mysterious-shore-42044.herokuapp.com/users/login`,
+      `https://web-production-fc34.up.railway.app/users/login`,
       creds
     );
     dispatch({ type: Auth_Success, payload: res.data });
@@ -21,6 +21,6 @@ export const login = (creds) => async (dispatch) => {
   }
 };
 
-export const logout = () => {
-  return { type: Auth_Logout };
+export const logout = () => async (dispatch) => {
+  dispatch({ type: Auth_Logout });
 };

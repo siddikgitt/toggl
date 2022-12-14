@@ -1,12 +1,12 @@
 const express = require("express");
-const dbConnect = require("./config/db");
-const cors = require("cors")
-const clientRouter = require("./features/client/client.router");
-const userRouter = require("./features/user/user.router");
-const taskRouter = require("./features/task/task.router");
-const projectRouter = require("./features/project/project.router");
-const teamMemberRouter = require("./features/team_member/tm.router");
-const tagRouter = require("./features/tags/tags.router");
+const dbConnect = require("./src/config/db");
+const cors = require("cors");
+const clientRouter = require("./src/features/client/client.router");
+const userRouter = require("./src/features/user/user.router");
+const taskRouter = require("./src/features/task/task.router");
+const projectRouter = require("./src/features/project/project.router");
+const teamMemberRouter = require("./src/features/team_member/tm.router");
+const tagRouter = require("./src/features/tags/tags.router");
 
 const app = express();
 app.use(cors())

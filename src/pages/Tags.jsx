@@ -28,7 +28,7 @@ export const postTags = async (text) => {
   let abc = localStorage.getItem("token");
   let data = await axios
     .post(
-      "http://localhost:8080/tags",
+      "https://web-production-fc34.up.railway.app/tags",
       { name: text },
       { headers: { token: abc } }
     )
@@ -41,7 +41,7 @@ export const postTags = async (text) => {
 export const getData = async () => {
   let abc = localStorage.getItem("token");
   let data = await axios
-    .get("http://localhost:8080/tags", { headers: { token: abc } })
+    .get("https://web-production-fc34.up.railway.app/tags", { headers: { token: abc } })
     .then((res) => {
       // console.log(res.data);
       return res.data;
@@ -52,7 +52,7 @@ export const getData = async () => {
 export const deletePost = async (id) => {
   let abc = localStorage.getItem("token");
   let data = await axios
-    .delete(`http://localhost:8080/tags/${id}`, { headers: { token: abc } })
+    .delete(`https://web-production-fc34.up.railway.app/tags/${id}`, { headers: { token: abc } })
     .then((res) => {
       console.log(res.data);
       return res.data;
@@ -76,8 +76,8 @@ export const Tags = () => {
       setData(res);
     });
   };
-  const handleDelete = (id) => {
-    deletePost(id);
+  const handleDelete = async(id) => {
+    await deletePost(id);
     handleData();
   };
 
