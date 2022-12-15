@@ -14,8 +14,16 @@ We had a week to build the project.
 
 We use HTML, CSS , React-JS, Redux, Express, MongoDB, Chakra-ui and some bit of Bootstrap to build the project.
 
+## Important Note
+
 Website is not responsive because of time constraint.
 Soon we'll make this project responsive.
+
+Use This Login Credential To check full functionality
+
+Email: siddik@gmail.com 
+
+Password: 1234
 
 ## Landing Page.
 
